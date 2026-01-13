@@ -12,9 +12,10 @@ export interface BreadcrumbItem {
 
 export interface NavItem {
     title: string;
-    href: NonNullable<InertiaLinkProps['href']>;
-    icon?: LucideIcon;
+    href: NonNullable<InertiaLinkProps['href']> | null;
+    icon?: LucideIcon | string;
     isActive?: boolean;
+    items?: NavItem[];
 }
 
 export type AppPageProps<
@@ -23,6 +24,7 @@ export type AppPageProps<
     name: string;
     auth: Auth;
     sidebarOpen: boolean;
+    menu: NavItem[];
     [key: string]: unknown;
 }
 

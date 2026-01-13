@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import NavFooter from '@/components/NavFooter.vue';
-import NavMain from '@/components/NavMain.vue';
+import AdminMainNav from '@admin/components/AdminMainNav.vue';
 import NavUser from '@/components/NavUser.vue';
 import {
     Sidebar,
@@ -14,31 +14,8 @@ import {
 import { dashboard } from '@/routes';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/vue3';
-import { BookOpen, Folder, LayoutGrid, Users, UsersRound, Shield } from 'lucide-vue-next';
+import { BookOpen, Folder } from 'lucide-vue-next';
 import AppLogo from './AppLogo.vue';
-
-const mainNavItems: NavItem[] = [
-    {
-        title: 'Dashboard',
-        href: dashboard(),
-        icon: LayoutGrid,
-    },
-    {
-        title: 'Users',
-        href: '/admin/user/users',
-        icon: Users,
-    },
-    {
-        title: 'User Groups',
-        href: '/admin/user/user-groups',
-        icon: UsersRound,
-    },
-    {
-        title: 'Permissions',
-        href: '/admin/user/permissions',
-        icon: Shield,
-    },
-];
 
 const footerNavItems: NavItem[] = [
     {
@@ -69,7 +46,7 @@ const footerNavItems: NavItem[] = [
         </SidebarHeader>
 
         <SidebarContent>
-            <NavMain :items="mainNavItems" />
+            <AdminMainNav />
         </SidebarContent>
 
         <SidebarFooter>
