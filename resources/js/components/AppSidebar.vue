@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import NavFooter from '@/components/NavFooter.vue';
-import AdminMainNav from '@admin/components/AdminMainNav.vue';
 import NavUser from '@/components/NavUser.vue';
 import {
     Sidebar,
@@ -13,6 +12,7 @@ import {
 } from '@/components/ui/sidebar';
 import { dashboard } from '@/routes';
 import { type NavItem } from '@/types';
+import AdminMainNav from '@admin/components/AdminMainNav.vue';
 import { Link } from '@inertiajs/vue3';
 import { BookOpen, Folder } from 'lucide-vue-next';
 import AppLogo from './AppLogo.vue';

@@ -25,6 +25,12 @@ export type AppPageProps<
     auth: Auth;
     sidebarOpen: boolean;
     menu: NavItem[];
+    flash?: {
+        success?: string;
+        error?: string;
+        info?: string;
+        warning?: string;
+    };
     [key: string]: unknown;
 }
 
