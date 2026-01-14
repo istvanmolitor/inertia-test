@@ -4,6 +4,7 @@ import {
     UserCog,
     Shield,
     LayoutGrid,
+    Languages,
     type LucideIcon,
 } from 'lucide-vue-next';
 import type { Component } from 'vue';
@@ -14,6 +15,7 @@ const iconMap: Record<string, LucideIcon> = {
     'users-cog': UserCog,
     'shield-alt': Shield,
     'layout-grid': LayoutGrid,
+    language: Languages,
 };
 
 export function useIconMap() {
