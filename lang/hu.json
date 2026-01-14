@@ -89,6 +89,12 @@
     "language::language.messages.deleted": "Nyelv sikeresen törölve",
     "language::language.messages.confirm_delete": "Biztosan törölni szeretnéd ezt a nyelvet?",
     "language::language.values.yes": "Igen",
-    "language::language.values.no": "Nem"
+    "language::language.values.no": "Nem",
+    "admin::pagination.info": ":current. oldal / :last",
+    "admin::delete.title": "Törlés megerősítése",
+    "admin::delete.message": "Biztosan törölni szeretné ezt az elemet?",
+    "admin::delete.confirm": "Törlés",
+    "admin::delete.cancel": "Mégse",
+    "pagination.info": ":current. oldal / :last"
 }
 

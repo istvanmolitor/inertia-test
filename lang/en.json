@@ -88,5 +88,11 @@
     "language::language.messages.deleted": "Language successfully deleted",
     "language::language.messages.confirm_delete": "Are you sure you want to delete this language?",
     "language::language.values.yes": "Yes",
-    "language::language.values.no": "No"
+    "language::language.values.no": "No",
+    "admin::pagination.info": "Page :current / :last",
+    "admin::delete.title": "Confirm Delete",
+    "admin::delete.message": "Are you sure you want to delete this item?",
+    "admin::delete.confirm": "Delete",
+    "admin::delete.cancel": "Cancel",
+    "pagination.info": "Page :current / :last"
 }
