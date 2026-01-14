@@ -21,6 +21,14 @@ createInertiaApp({
             );
         }
 
+        if (name.startsWith('Language/')) {
+            const pageName = name.replace('Language/', '');
+            return resolvePageComponent(
+                `../../packages/language/resources/js/pages/${pageName}.vue`,
+                import.meta.glob<DefineComponent>('../../packages/language/resources/js/pages/**/*.vue'),
+            );
+        }
+
         return resolvePageComponent(
             `./pages/${name}.vue`,
             import.meta.glob<DefineComponent>('./pages/**/*.vue'),
