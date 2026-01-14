@@ -23,6 +23,12 @@ export function route(name: string, params?: RouteParams): string {
         'user.admin.permissions.destroy': (id: number) => `/admin/user/permissions/${id}`,
         'user.admin.permissions.update': (id: number) => `/admin/user/permissions/${id}`,
         'user.admin.permissions.store': () => `/admin/user/permissions`,
+        'language.admin.languages.index': () => '/admin/language',
+        'language.admin.languages.create': () => '/admin/language/create',
+        'language.admin.languages.edit': (id: number) => `/admin/language/${id}/edit`,
+        'language.admin.languages.destroy': (id: number) => `/admin/language/${id}`,
+        'language.admin.languages.update': (id: number) => `/admin/language/${id}`,
+        'language.admin.languages.store': () => `/admin/language`,
     };
 
     const routeFn = routeMap[name];

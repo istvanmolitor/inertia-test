@@ -29,8 +29,22 @@ export default defineConfig({
     resolve: {
         alias: {
             '@': path.resolve(__dirname, './resources/js'),
-            '@admin': path.resolve(__dirname, './packages/admin/resources/js'),
-            '@user': path.resolve(__dirname, './packages/user/resources/js'),
+            '@admin': path.resolve(
+                __dirname,
+                './packages/admin/resources/js'
+            ),
+            '@user': path.resolve(
+                __dirname,
+                './packages/user/resources/js'
+            ),
+            '@language': path.resolve(
+                __dirname,
+                './packages/language/resources/js',
+            ),
+            '@cms': path.resolve(
+                __dirname,
+                './packages/cms/resources/js',
+            ),
         },
     },
 });

@@ -1,7 +1,6 @@
 import '../css/app.css';
 
 import { createInertiaApp } from '@inertiajs/vue3';
-import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import type { DefineComponent } from 'vue';
 import { createApp, h } from 'vue';
 import { i18nVue, trans } from 'laravel-vue-i18n';
@@ -13,26 +12,25 @@ const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 createInertiaApp({
     title: (title) => (title ? `${title} - ${appName}` : appName),
     resolve: (name) => {
-        if (name.startsWith('User/')) {
-            const pageName = name.replace('User/', '');
-            return resolvePageComponent(
-                `../../packages/user/resources/js/pages/${pageName}.vue`,
-                import.meta.glob<DefineComponent>('../../packages/user/resources/js/pages/**/*.vue'),
-            );
+        const pages = import.meta.glob<DefineComponent>([
+            './pages/**/*.vue',
+            '../../packages/*/resources/js/pages/**/*.vue',
+        ], { eager: true });
+
+        let page = pages[`./pages/${name}.vue`];
+
+        if (!page) {
+            const packagePageKey = Object.keys(pages).find((key) => key.endsWith(`/pages/${name}.vue`));
+            if (packagePageKey) {
+                page = pages[packagePageKey];
+            }
         }
 
-        if (name.startsWith('Language/')) {
-            const pageName = name.replace('Language/', '');
-            return resolvePageComponent(
-                `../../packages/language/resources/js/pages/${pageName}.vue`,
-                import.meta.glob<DefineComponent>('../../packages/language/resources/js/pages/**/*.vue'),
-            );
+        if (!page) {
+            throw new Error(`Page not found: ${name}`);
         }
 
-        return resolvePageComponent(
-            `./pages/${name}.vue`,
-            import.meta.glob<DefineComponent>('./pages/**/*.vue'),
-        );
+        return page;
     },
     setup({ el, App, props, plugin }) {
         const app = createApp({ render: () => h(App, props) });
