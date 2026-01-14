@@ -30,6 +30,7 @@ export default defineConfig({
         alias: {
             '@': path.resolve(__dirname, './resources/js'),
             '@admin': path.resolve(__dirname, './packages/admin/resources/js'),
+            '@user': path.resolve(__dirname, './packages/user/resources/js'),
         },
     },
 });

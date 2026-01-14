@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "54199280bd427e56c54ccbc0f1eab018",
+    "content-hash": "113c08b1bbf1188f57f5dfb171462bc3",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1233,7 +1233,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/admin",
-                "reference": "f214daf633f9b11d217aebba8441e8dc9385f617"
+                "reference": "5ef04f6e97ec8e302cec84c323b538e79c577956"
             },
             "require": {
                 "istvanmolitor/menu": "dev-main"
@@ -1266,12 +1266,91 @@
             }
         },
         {
+            "name": "istvanmolitor/cms",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/cms",
+                "reference": "bc1cc91df1e52e633fbdaa3fc88607cb7b0ce2f9"
+            },
+            "require": {
+                "istvanmolitor/language": "*@dev",
+                "istvanmolitor/menu": "*@dev",
+                "istvanmolitor/user": "*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\Cms\\Providers\\CmsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\Cms\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "CMS package for filament 4 applications.",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "istvanmolitor/language",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/language",
+                "reference": "4ab662edaa70754d8e006af8fad520dca9664603"
+            },
+            "require": {
+                "istvanmolitor/user": "*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\Language\\Providers\\LanguageServiceProvider"
+                    ],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\Language\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "Language",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "istvanmolitor/menu",
             "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "./packages/menu",
-                "reference": "fe75460f43d8303469fc38763099ce2304d41396"
+                "reference": "c0b9f6ac8027a6519dbfb73d4b560a5454ebe690"
             },
             "require-dev": {
                 "phpunit/phpunit": "^10.0|^11.0"
@@ -1315,7 +1394,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/user",
-                "reference": "87ab402d3ecb7ac62e335eab6c43b9f533112597"
+                "reference": "e1c0eb67ff688542540da476c725ef6201a59e8c"
             },
             "type": "library",
             "extra": {
@@ -9876,6 +9955,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "istvanmolitor/admin": 20,
+        "istvanmolitor/cms": 20,
+        "istvanmolitor/language": 20,
         "istvanmolitor/menu": 20,
         "istvanmolitor/user": 20
     },
